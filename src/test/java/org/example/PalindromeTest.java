@@ -16,7 +16,6 @@ class PalindromeTest {
         Palindrome testPalindrome = new Palindrome();
         Boolean result = testPalindrome.isPalindrome("racecar");
         assertTrue(result, "The method should have returned true, instead returned " + result);
-
     }
 
     @Test
