@@ -8,13 +8,14 @@ class PalindromeTest {
 
     @Test
     void main() {
+
     }
 
     @Test
     void isPalindrome() {
         Palindrome testPalindrome = new Palindrome();
         Boolean result = testPalindrome.isPalindrome("racecar");
-        assertTrue(result, "The method shoud have returned true, instead returned " + result);
+        assertTrue(result, "The method should have returned true, instead returned " + result);
 
     }
 
