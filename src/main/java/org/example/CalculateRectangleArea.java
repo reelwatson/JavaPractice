@@ -20,5 +20,6 @@ public class CalculateRectangleArea {
         if (width == height) {
             System.out.println("Looks like a square to me!");
         }
+        scanner.close();
     }
 }
