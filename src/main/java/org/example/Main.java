@@ -29,7 +29,6 @@ public class Main {
         else {
             System.out.println("A teacher perhaps?");
         }
-
         scanner.close();
     }
 }
