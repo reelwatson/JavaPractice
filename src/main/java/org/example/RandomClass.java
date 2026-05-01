@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RandomClass {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
@@ -19,14 +19,11 @@ public class RandomClass {
 
         if (guessNum == randomNum) {
             System.out.println("Wow! You were right on the money!");
-        }
-        else if (Math.abs(randomNum - guessNum) < 100) {
+        } else if (Math.abs(randomNum - guessNum) < 100) {
             System.out.println("Close but no cigar!");
-        }
-        else if (Math.abs(randomNum - guessNum) < 500) {
+        } else if (Math.abs(randomNum - guessNum) < 500) {
             System.out.println("Not bad, all things considered.");
-        }
-        else {
+        } else {
             System.out.println("Not even close!");
         }
 

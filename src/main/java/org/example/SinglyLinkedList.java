@@ -1,8 +1,9 @@
 package org.example;
+
 import java.util.LinkedList;
 
 public class SinglyLinkedList {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.practiceQueue();
     }

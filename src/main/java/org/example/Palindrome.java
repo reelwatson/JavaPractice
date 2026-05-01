@@ -5,6 +5,7 @@ public class Palindrome {
         Palindrome newPal = new Palindrome();
         newPal.isPalindrome("Odysseus");
     }
+
     public boolean isPalindrome(String originalString) {
         boolean isPalindrome = false;
 
