@@ -13,8 +13,22 @@ public class Main {
         System.out.println("Enter your age: ");
         int age = scanner.nextInt(); //will fail if float or String entered
 
+        System.out.print("What is your undergraduate gpa? ");
+        double gpa = scanner.nextDouble();
+
+        System.out.println("Are you currently a student? (true/false) ");
+        boolean student = scanner.nextBoolean();
+
         System.out.println("Hello " + name);
         System.out.println("You are " + age + " years old");
+        System.out.println("Your gpa is: " + gpa);
+
+        if (student) {
+            System.out.println("Greetings fellow student!");
+        }
+        else {
+            System.out.println("A teacher perhaps?");
+        }
 
         scanner.close();
     }
