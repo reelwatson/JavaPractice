@@ -10,9 +10,9 @@ public class EnhancedSwitch {
         String day = scanner.nextLine();
 
         switch(day) {
-            case "Sunday","Monday", "Tuesday", "Wednesday", "Thursday" -> System.out.println("Still working inshallah...");
+            case "Sunday","Monday", "Tuesday", "Wednesday", "Thursday" -> System.out.println("Still working...");
             case "Friday" -> System.out.println("Go to jum'ah!");
-            case "Saturday" -> System.out.println("Woohoo, party hard!");
+            case "Saturday" -> System.out.println("Woohoo, take a break!");
             default -> System.out.println("Hey, that's not a real day!");
         }
 
