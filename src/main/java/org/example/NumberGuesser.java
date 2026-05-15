@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class NumberGuesser {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
