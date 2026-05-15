@@ -3,11 +3,11 @@ package org.example;
 import java.util.Scanner;
 
 public class BankingProgram {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
 
         // Do-while loop when the response is not a valid name
-        System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name.");
+        System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
         String lastName = scanner.nextLine();
 
         switch (lastName) {
@@ -29,17 +29,21 @@ public class BankingProgram {
 //            switch (decision) {
 //                case 1 -> ; Display the number based on the family last name
 //                case 2 -> ; Take a number of solaris, add to existing total, and show new total
-//                case 3 -> ; Take a number of solars, subtract from existing total, and show new total
+//                case 3 -> ; Take a number of solaris, subtract from existing total, and show new total
 //                case 4 -> ; Show a thank-you message and exit
 //            }
 
         }
         while (decision != 4);
 
-        System.out.println("Thank you for choosing to do business with the Spacing Guild!");
+        System.out.println("Thank you for choosing to do business with the Spacing Guild!\n");
+        Thread.sleep(1000);
+        System.out.printf("We appreciate the business of House %s and look forward to seeing you again!", lastName);
 
 
 
         scanner.close();
     }
+
+    //Wrapper class to contain info on each particular house?
 }
