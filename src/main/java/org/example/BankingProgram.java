@@ -3,8 +3,9 @@ package org.example;
 import java.util.Scanner;
 
 public class BankingProgram {
-    public static void main (String[] args) {
-        bankInterface();
+    public static void main (String[] args) throws InterruptedException {
+        BankingProgram program = new BankingProgram();
+        program.bankInterface();
     }
 
     public void bankInterface() throws InterruptedException {
@@ -16,10 +17,19 @@ public class BankingProgram {
         // Do-while loop when the response is not a valid name
         do {
             switch (lastName) {
-                case "Atreides" -> System.out.println("Welcome, Duke Leto!");
-                case "Harkonnen" -> System.out.println("Greetings, beloved Na-Baron!");
-                case "Corrino" -> System.out.println("All hail the Padishah Emperor of the Known Universe!");
-                default -> System.out.println("I apologize, you do not seem to have an account here.");
+                case "Atreides": {
+                    System.out.println("Welcome, Duke Leto!");
+                }
+                case "Harkonnen": {
+                    System.out.println("Greetings, beloved Na-Baron!");
+                }
+                case "Corrino": {
+                    System.out.println("All hail the Padishah Emperor of the Known Universe!");
+                }
+                default: {
+                    System.out.println("I apologize, you do not seem to have an account here. Please try again");
+                    lastName = scanner.nextLine();
+                }
             }
         }
         while (!lastName.equals("Atreides") && !lastName.equals("Harkonnen") && !lastName.equals("Corrino"));
@@ -36,18 +46,25 @@ public class BankingProgram {
             switch (decision) {
                 case 1: {
                     showAccounts(lastName);
+                    break;
                 }
                 case 2: {
-
+                    System.out.println("Please input the amount you would like to deposit");
+                    long deposit = scanner.nextLong();
+                    break;
                 }
                 case 3: {
-
+                    System.out.println("Please input the amount you would like to withdraw");
+                    // TO DO: Check in advance that withdrawal amount is not greater than
+                    break;
                 }
                 case 4: {
                     break;
+
                 }
                 default: {
                     System.out.println("The number you entered is invalid, please try again.");
+                    decision = scanner.nextInt();
                 }
             }
 //                case 2 -> ; Take a number of solaris, add to existing total, and show new total
@@ -64,6 +81,7 @@ public class BankingProgram {
         scanner.close();
     }
 
+    // Should these methods live in separate classes? Ehhhh but I'm in too deep now
     private void showAccounts(String householdName) {
         switch (householdName) {
             case "Atreides": {
@@ -87,11 +105,11 @@ public class BankingProgram {
         }
     }
 
-    private long depositToAccount(String householdName, String accountType) {
+    private long depositToAccount(String householdName, String accountType, long deposit) {
         return 0;
     }
 
-    private long withdrawFromAccount(String householdName, String accountType) {
+    private long withdrawFromAccount(String householdName, String accountType, long withdrawal) {
         return 0;
     }
 
