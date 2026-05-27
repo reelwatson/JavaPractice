@@ -19,12 +19,15 @@ public class BankingProgram {
             switch (lastName) {
                 case "Atreides": {
                     System.out.println("Welcome, Duke Leto!");
+                    break;
                 }
                 case "Harkonnen": {
                     System.out.println("Greetings, beloved Na-Baron!");
+                    break;
                 }
                 case "Corrino": {
                     System.out.println("All hail the Padishah Emperor of the Known Universe!");
+                    break;
                 }
                 default: {
                     System.out.println("I apologize, you do not seem to have an account here. Please try again");
@@ -36,7 +39,9 @@ public class BankingProgram {
 
         int decision;
         do {
+            Thread.sleep(1000);
             System.out.println("Please select what you would like to do (1-4): ");
+            Thread.sleep(1000);
             System.out.println("1: Check your account's total amount.");
             System.out.println("2: Make a deposit into your account.");
             System.out.println("3: Make a withdrawal from your account");
@@ -94,16 +99,19 @@ public class BankingProgram {
                 System.out.println("Checking account: " + showAccount.atreidesChecking);
                 System.out.println("Savings account: " + showAccount.atreidesSavings);
                 System.out.println("Total amount: " + (showAccount.atreidesChecking + showAccount.atreidesSavings));
+                break;
             }
             case "Harkonnen": {
                 System.out.println("Checking account: " + showAccount.harkonnenChecking);
                 System.out.println("Savings account: " + showAccount.harkonnenSavings);
                 System.out.println("Total amount: " + (showAccount.harkonnenChecking + showAccount.harkonnenSavings));
+                break;
             }
             case "Corrino": {
                 System.out.println("Checking account: " + showAccount.corrinoChecking);
                 System.out.println("Savings account: " + showAccount.corrinoSavings);
                 System.out.println("Total amount: " + (showAccount.corrinoChecking + showAccount.corrinoSavings));
+                break;
             }
         }
     }
