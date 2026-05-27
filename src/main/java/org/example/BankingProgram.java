@@ -30,7 +30,7 @@ public class BankingProgram {
                     break;
                 }
                 default: {
-                    System.out.println("I apologize, you do not seem to have an account here. Please try again");
+                    System.out.println("I apologize, you do not seem to have an account here. Please try again:");
                     lastName = scanner.nextLine();
                 }
             }
