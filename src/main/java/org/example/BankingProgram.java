@@ -3,15 +3,18 @@ package org.example;
 import java.util.Scanner;
 
 public class BankingProgram {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main (String[] args) {
+        bankInterface();
+    }
+
+    public void bankInterface() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         String lastName = "";
+        System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
+        lastName = scanner.nextLine();
 
         // Do-while loop when the response is not a valid name
         do {
-            System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
-            lastName = scanner.nextLine();
-
             switch (lastName) {
                 case "Atreides" -> System.out.println("Welcome, Duke Leto!");
                 case "Harkonnen" -> System.out.println("Greetings, beloved Na-Baron!");
@@ -20,7 +23,6 @@ public class BankingProgram {
             }
         }
         while (!lastName.equals("Atreides") && !lastName.equals("Harkonnen") && !lastName.equals("Corrino"));
-
 
         int decision = 0;
         do {
@@ -31,22 +33,34 @@ public class BankingProgram {
             System.out.println("4: End this transaction.");
 
             decision = scanner.nextInt();
-//            switch (decision) {
-//                case 1 -> ; Display the number based on the family last name
+            switch (decision) {
+                case 1: {
+                    showAccounts(lastName);
+                }
+                case 2: {
+
+                }
+                case 3: {
+
+                }
+                case 4: {
+                    break;
+                }
+                default: {
+                    System.out.println("The number you entered is invalid, please try again.");
+                }
+            }
 //                case 2 -> ; Take a number of solaris, add to existing total, and show new total
 //                case 3 -> ; Take a number of solaris, subtract from existing total, and show new total
 //                case 4 -> ; Show a thank-you message and exit
+//                default ->; Respond that the number is invalid
 //            }
-
         }
         while (decision != 4);
 
         System.out.println("Thank you for choosing to do business with the Spacing Guild!\n");
         Thread.sleep(1000);
         System.out.printf("We appreciate the business of House %s and look forward to seeing you again!", lastName);
-
-
-
         scanner.close();
     }
 
