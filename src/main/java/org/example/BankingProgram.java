@@ -86,34 +86,48 @@ public class BankingProgram {
 
     // Should these methods live in separate classes? Ehhhh but I'm in too deep now
     private void showAccounts(String householdName) {
+        allAccounts showAccount = new allAccounts();
         switch (householdName) {
             // Does not really follow DRY - easy to refactor if running a search to a database
             // Possible TO DO: set up an actual database and have this class make queries
             case "Atreides": {
-                houseAtreides newAtreides = new houseAtreides();
-                System.out.println("Checking account: " + newAtreides.checkingAccount);
-                System.out.println("Savings account: " + newAtreides.savingsAccount);
-                System.out.println("Total amount: " + (newAtreides.checkingAccount + newAtreides.savingsAccount));
+                System.out.println("Checking account: " + showAccount.atreidesChecking);
+                System.out.println("Savings account: " + showAccount.atreidesSavings);
+                System.out.println("Total amount: " + (showAccount.atreidesChecking + showAccount.atreidesSavings));
             }
             case "Harkonnen": {
-                houseHarkonnen newHarkonnen = new houseHarkonnen();
-                System.out.println("Checking account: " + newHarkonnen.checkingAccount);
-                System.out.println("Savings account: " + newHarkonnen.savingsAccount);
-                System.out.println("Total amount: " + (newHarkonnen.checkingAccount + newHarkonnen.savingsAccount));
+                System.out.println("Checking account: " + showAccount.harkonnenChecking);
+                System.out.println("Savings account: " + showAccount.harkonnenSavings);
+                System.out.println("Total amount: " + (showAccount.harkonnenChecking + showAccount.harkonnenSavings));
             }
             case "Corrino": {
-                houseCorrino newCorrino = new houseCorrino();
-                System.out.println("Checking account: " + newCorrino.checkingAccount);
-                System.out.println("Savings account: " + newCorrino.savingsAccount);
-                System.out.println("Total amount: " + (newCorrino.checkingAccount + newCorrino.savingsAccount));
+                System.out.println("Checking account: " + showAccount.corrinoChecking);
+                System.out.println("Savings account: " + showAccount.corrinoSavings);
+                System.out.println("Total amount: " + (showAccount.corrinoChecking + showAccount.corrinoSavings));
             }
         }
     }
 
     private long depositToAccount(String householdName, long deposit) {
-        long newTotal;
+        allAccounts depositAccount = new allAccounts();
+        long newTotal = 0;
 
-        return 0;
+        // Why do I feel like someone would use a nested ternary operator here...
+        switch (householdName) {
+            case "Atreides": {
+                newTotal = deposit + depositAccount.atreidesChecking;
+                break;
+            }
+            case "Harkonnen": {
+                newTotal = deposit + depositAccount.harkonnenChecking;
+                break;
+            }
+            case "Corrino": {
+                newTotal = depositAccount.corrinoChecking;
+                break;
+            }
+        }
+        return newTotal;
     }
 
     private long withdrawFromAccount(String householdName, long withdrawal) {
@@ -123,19 +137,13 @@ public class BankingProgram {
     // Private classes to contain info on each particular house - non-static (after some experimentation)
     // In real life would reach back into a database through a query, then make database updates as needed
     // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
-    // TO DO: Implement the above line with a database (PostgreSQL?)
-    private class houseAtreides {
-        long checkingAccount = 3600200;
-        long savingsAccount = 456898444;
-    }
-
-    private class houseHarkonnen {
-        long checkingAccount = 13254689;
-        long savingsAccount = 865456211;
-    }
-
-    private class houseCorrino {
-        long checkingAccount = 43521235;
-        long savingsAccount = 568644355;
+    // TO DO: Implement the above line with a database (SQLite)
+    private class allAccounts {
+        long atreidesChecking = 3600200;
+        long atreidesSavings = 456898444;
+        long harkonnenChecking = 13254689;
+        long harkonnenSavings = 865456211;
+        long corrinoChecking = 43521235;
+        long corrinoSavings = 568644355;
     }
 }
