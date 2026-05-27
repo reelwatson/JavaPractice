@@ -10,7 +10,7 @@ public class BankingProgram {
 
     public void bankInterface() throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
-        String lastName = "";
+        String lastName;
         System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
         lastName = scanner.nextLine();
 
@@ -34,7 +34,7 @@ public class BankingProgram {
         }
         while (!lastName.equals("Atreides") && !lastName.equals("Harkonnen") && !lastName.equals("Corrino"));
 
-        int decision = 0;
+        int decision;
         do {
             System.out.println("Please select what you would like to do (1-4): ");
             System.out.println("1: Check your account's total amount.");
@@ -73,11 +73,6 @@ public class BankingProgram {
                     decision = scanner.nextInt();
                 }
             }
-//                case 2 -> ; Take a number of solaris, add to existing total, and show new total
-//                case 3 -> ; Take a number of solaris, subtract from existing total, and show new total
-//                case 4 -> ; Show a thank-you message and exit
-//                default ->; Respond that the number is invalid
-//            }
         }
         while (decision != 4);
 
@@ -140,15 +135,15 @@ public class BankingProgram {
 
         switch (householdName) {
             case "Atreides": {
-                newTotal = withdrawAccount.atreidesChecking;
+                newTotal = withdrawAccount.atreidesChecking - withdrawal;
                 break;
             }
             case "Harkonnen": {
-                newTotal = withdrawAccount.harkonnenChecking;
+                newTotal = withdrawAccount.harkonnenChecking - withdrawal;
                 break;
             }
             case "Corrino": {
-                newTotal = withdrawAccount.corrinoChecking;
+                newTotal = withdrawAccount.corrinoChecking - withdrawal;
                 break;
             }
         }
@@ -156,10 +151,10 @@ public class BankingProgram {
         return newTotal;
     }
 
-    // Private classes to contain info on each particular house - non-static (after some experimentation)
+    // Private classes to contain info on each particular house - static or non-static?
     // In real life would reach back into a database through a query, then make database updates as needed
-    // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
     // TO DO: Implement the above line with a database (SQLite)
+    // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
     private class allAccounts {
         long atreidesChecking = 3600200;
         long atreidesSavings = 456898444;
