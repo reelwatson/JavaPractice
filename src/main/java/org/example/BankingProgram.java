@@ -62,11 +62,13 @@ public class BankingProgram {
                     // TO DO: Check in advance that withdrawal amount is not greater than checking acct
                     long newTotal = withdrawFromAccount(lastName, withdrawal);
                     System.out.println("Your new total amount is " + newTotal);
+                    if (newTotal < 0) {
+                        System.out.println("Your checking account now has a negative balance.");
+                    }
                     break;
                 }
                 case 4: {
                     break;
-
                 }
                 default: {
                     System.out.println("The number you entered is invalid, please try again.");
