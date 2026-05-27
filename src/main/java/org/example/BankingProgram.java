@@ -6,6 +6,7 @@ public class BankingProgram {
     public static void main (String[] args) throws InterruptedException {
         BankingProgram program = new BankingProgram();
         program.bankInterface();
+        System.out.println("The spice must flow...");
     }
 
     public void bankInterface() throws InterruptedException {
