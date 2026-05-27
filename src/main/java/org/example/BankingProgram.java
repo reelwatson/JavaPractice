@@ -49,8 +49,10 @@ public class BankingProgram {
                     break;
                 }
                 case 2: {
-                    System.out.println("Please input the amount you would like to deposit");
+                    System.out.println("Please input the amount you would like to deposit into checking");
                     long deposit = scanner.nextLong();
+                    depositToAccount(lastName, deposit);
+
                     break;
                 }
                 case 3: {
@@ -105,11 +107,11 @@ public class BankingProgram {
         }
     }
 
-    private long depositToAccount(String householdName, String accountType, long deposit) {
+    private long depositToAccount(String householdName, long deposit) {
         return 0;
     }
 
-    private long withdrawFromAccount(String householdName, String accountType, long withdrawal) {
+    private long withdrawFromAccount(String householdName, long withdrawal) {
         return 0;
     }
 
