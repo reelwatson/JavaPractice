@@ -113,6 +113,7 @@ public class BankingProgram {
         long newTotal = 0;
 
         // Why do I feel like someone would use a nested ternary operator here...
+        // No IntelliJ I did NOT in fact forget a question mark, quit autocorrecting me about it
         switch (householdName) {
             case "Atreides": {
                 newTotal = deposit + depositAccount.atreidesChecking;
