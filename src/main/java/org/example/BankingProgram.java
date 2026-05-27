@@ -51,8 +51,9 @@ public class BankingProgram {
                 case 2: {
                     System.out.println("Please input the amount you would like to deposit into checking");
                     long deposit = scanner.nextLong();
-                    depositToAccount(lastName, deposit);
-
+                    long newTotal = depositToAccount(lastName, deposit);
+                    System.out.println("Thank you for your deposit!");
+                    System.out.printf("Your new total amount is " + newTotal);
                     break;
                 }
                 case 3: {
@@ -86,6 +87,8 @@ public class BankingProgram {
     // Should these methods live in separate classes? Ehhhh but I'm in too deep now
     private void showAccounts(String householdName) {
         switch (householdName) {
+            // Does not really follow DRY - easy to refactor if running a search to a database
+            // Possible TO DO: set up an actual database and have this class make queries
             case "Atreides": {
                 houseAtreides newAtreides = new houseAtreides();
                 System.out.println("Checking account: " + newAtreides.checkingAccount);
@@ -108,6 +111,8 @@ public class BankingProgram {
     }
 
     private long depositToAccount(String householdName, long deposit) {
+        long newTotal;
+
         return 0;
     }
 
@@ -117,7 +122,8 @@ public class BankingProgram {
 
     // Private classes to contain info on each particular house - non-static (after some experimentation)
     // In real life would reach back into a database through a query, then make database updates as needed
-    // TO DO: Implement the above line with a database (postgresql?)
+    // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
+    // TO DO: Implement the above line with a database (PostgreSQL?)
     private class houseAtreides {
         long checkingAccount = 3600200;
         long savingsAccount = 456898444;
