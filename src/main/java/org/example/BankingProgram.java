@@ -53,12 +53,15 @@ public class BankingProgram {
                     long deposit = scanner.nextLong();
                     long newTotal = depositToAccount(lastName, deposit);
                     System.out.println("Thank you for your deposit!");
-                    System.out.printf("Your new total amount is " + newTotal);
+                    System.out.println("Your new total amount is " + newTotal);
                     break;
                 }
                 case 3: {
                     System.out.println("Please input the amount you would like to withdraw");
-                    // TO DO: Check in advance that withdrawal amount is not greater than
+                    long withdrawal = scanner.nextLong();
+                    // TO DO: Check in advance that withdrawal amount is not greater than checking acct
+                    long newTotal = withdrawFromAccount(lastName, withdrawal);
+                    System.out.println("Your new total amount is " + newTotal);
                     break;
                 }
                 case 4: {
@@ -132,7 +135,25 @@ public class BankingProgram {
     }
 
     private long withdrawFromAccount(String householdName, long withdrawal) {
-        return 0;
+        allAccounts withdrawAccount = new allAccounts();
+        long newTotal = 0;
+
+        switch (householdName) {
+            case "Atreides": {
+                newTotal = withdrawAccount.atreidesChecking;
+                break;
+            }
+            case "Harkonnen": {
+                newTotal = withdrawAccount.harkonnenChecking;
+                break;
+            }
+            case "Corrino": {
+                newTotal = withdrawAccount.corrinoChecking;
+                break;
+            }
+        }
+
+        return newTotal;
     }
 
     // Private classes to contain info on each particular house - non-static (after some experimentation)
