@@ -161,10 +161,9 @@ public class BankingProgram {
         return newTotal;
     }
 
-    // Private classes to contain info on each particular house - static or non-static?
+    // Private class to contain info on each particular house - static or non-static?
     // In real life would reach back into a database through a query, then make database updates as needed
     // TO DO: Implement the above line with a database (SQLite)
-    // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
     private class allAccounts {
         long atreidesChecking = 3600200;
         long atreidesSavings = 456898444;
