@@ -11,7 +11,45 @@ class BankingProgramTest {
     }
 
     @Test
-    void bankInterfaceTest() {
+    void bankInterfaceTest_whenLastNameAtreides() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenLastNameHarkonnen() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenLastNameCorrino() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenLastNameInvalid() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenLastNameInvalidThenValid() {
+        // Want to validate that the personalized message still shows
+        // TO DO: Refactor class to meet the above requirement
+    }
+
+    @Test
+    void bankInterfaceTest_whenOptionIsOne() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenOptionIsTwo() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenOptionIsThree() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenOptionIsFour() {
+    }
+
+    @Test
+    void bankInterfaceTest_whenOptionIsInvalid() {
     }
 
     @Test
