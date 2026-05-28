@@ -7,26 +7,32 @@ import static org.junit.jupiter.api.Assertions.*;
 class PalindromeTest {
 
     @Test
-    void main() {
+    void mainTest() {
 
     }
 
     @Test
     void isPalindrome() {
         Palindrome testPalindrome = new Palindrome();
-        Boolean result = testPalindrome.isPalindrome("racecar");
+        boolean result = testPalindrome.isPalindrome("racecar");
         assertTrue(result, "The method should have returned true, instead returned " + result);
     }
 
     @Test
     void isNotPalindrome() {
         Palindrome testPalindrome = new Palindrome();
-        Boolean result = testPalindrome.isPalindrome("streetcar");
+        boolean result = testPalindrome.isPalindrome("streetcar");
         assertFalse(result, "The method should have returned false, instead returned " + result);
     }
 
     @Test
     void isNullString() {
+        Palindrome testPalindrome = new Palindrome();
+        boolean result = testPalindrome.isPalindrome(null);
+    }
+
+    @Test
+    void isBlankString() {
 
     }
 }
