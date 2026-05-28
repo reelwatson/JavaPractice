@@ -9,6 +9,8 @@ class BankingProgramTest {
     @Test
     void mainTest() {
     }
+    // TO DO: CSV file with names, special greetings, and amounts in checking and savings
+    // That way can test responses quickly rather than hard-coding tests as below
 
     @Test
     void bankInterfaceTest_whenLastNameAtreides() {
