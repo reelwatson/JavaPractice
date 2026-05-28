@@ -8,9 +8,8 @@ to a full-fledged program/application. As of May 28, 2026, the project has begun
 to focus on a mock "banking" system for the households of Dune, Frank Herbert's 
 science fiction novel. This may change the ultimate shape of the project. 
 
-Specific daily entries can be found on the project Wiki on GitHub. Branches are
-retained until they are successfully merged into main, at which point they are
-deleted. 
+Branches are retained until they are successfully merged into main, at which point 
+they are deleted. 
 
 ## Technologies Used
 * Java and JUnit
