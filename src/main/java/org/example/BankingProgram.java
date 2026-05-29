@@ -102,6 +102,7 @@ public class BankingProgram {
         switch (householdName) {
             // Does not really follow DRY - easy to refactor if running a search to a database
             // Possible TO DO: set up an actual database and have this class make queries
+            // TO DO: Refactor for DRY
             case "Atreides": {
                 System.out.println("Checking account: " + showAccount.atreidesChecking);
                 System.out.println("Savings account: " + showAccount.atreidesSavings);
@@ -130,8 +131,6 @@ public class BankingProgram {
         allAccounts depositAccount = new allAccounts();
         long newTotal = 0;
         // TO DO: Refactor code so a negative number is not allowed
-
-
 
         // Why do I feel like someone would use a nested ternary operator here...
         // No IntelliJ I did NOT in fact forget a question mark, quit autocorrecting me about it

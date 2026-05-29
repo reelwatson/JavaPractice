@@ -9,6 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankingProgramTest {
 
+    // Note to self: if I do ever get a database set up
+    // then will need to create a mock/stub/fake numbers for diff accounts
+    // Meaning I will need to refactor a bunch of tests
+
     BankingProgram newTransaction = new BankingProgram();
     String atreides = "Atreides";
     String harkonnen = "Harkonnen";
