@@ -1,3 +1,8 @@
+// NOTE: will likely turn this class into its own project
+// Fake ATM interface with handler and helper methods
+// Plus database integration
+// API calls?
+
 package org.example;
 
 import java.util.Scanner;
@@ -13,6 +18,7 @@ public class BankingProgram {
         String lastName;
         System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
         lastName = scanner.nextLine();
+        // Should also ask for a specific PIN to authenticate
 
         // Do-while loop when the response is not a valid name
         do {
