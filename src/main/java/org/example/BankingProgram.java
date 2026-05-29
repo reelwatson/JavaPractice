@@ -19,6 +19,7 @@ public class BankingProgram {
         System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
         lastName = scanner.nextLine();
         // Should also ask for a specific PIN to authenticate
+        // Stretch goal - multifactor authentication
 
         // Do-while loop when the response is not a valid name
         do {
