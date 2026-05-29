@@ -116,14 +116,11 @@ class BankingProgramTest {
 
     @Test
     void depositToAccountTest_whenDepositNegative() {
-        // TO DO: Refactor code so a negative number is not allowed
     }
 
     @Test
     void depositToAccountTest_whenTotalExceedsLongMax() {
-        // TO DO: Refactor code to avoid overflow issues
-        // Show message to user when total would be greater than max long
-        // Restart transaction
+
     }
 
     @Test
@@ -148,8 +145,6 @@ class BankingProgramTest {
 
     @Test
     void withdrawFromAccountTest_whenNewTotalIsTooLow() {
-        // TO DO: Refactor code to avoid going below MIN long value
-        // Show message to user telling them to pick a smaller withdrawal
-        // Restart the loop
+
     }
 }

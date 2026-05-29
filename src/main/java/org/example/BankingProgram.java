@@ -124,8 +124,14 @@ public class BankingProgram {
     }
 
     long depositToAccount(String householdName, long deposit) {
+        // TO DO: Refactor code to avoid overflow issues
+        // Show message to user when total would be greater than max long
+        // Restart transaction
         allAccounts depositAccount = new allAccounts();
         long newTotal = 0;
+        // TO DO: Refactor code so a negative number is not allowed
+
+
 
         // Why do I feel like someone would use a nested ternary operator here...
         // No IntelliJ I did NOT in fact forget a question mark, quit autocorrecting me about it
@@ -147,6 +153,9 @@ public class BankingProgram {
     }
 
     long withdrawFromAccount(String householdName, long withdrawal) {
+        // TO DO: Refactor code to avoid going below MIN long value
+        // Show message to user telling them to pick a smaller withdrawal
+        // Restart the loop
         allAccounts withdrawAccount = new allAccounts();
         long newTotal = 0;
 
