@@ -1,21 +1,40 @@
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BankingProgramTest {
 
+    BankingProgram newTransaction = new BankingProgram();
+    String atreides = "Atreides";
+    String harkonnen = "Harkonnen";
+    String corrino = "Corrino";
+    long deposit = 789;
+    long withdrawal = 123;
+    // long tooLargeDeposit
+    // long tooLargeWithdrawal
+
+
     @Test
-    void mainTest() {
+    public void mainTest() {
     }
+    // TO DO: CSV file with names, special greetings, and amounts in checking and savings
+    // That way can test responses quickly rather than hard-coding tests as below
 
     @Test
     void bankInterfaceTest_whenLastNameAtreides() {
+        // Turns out testing scanner inputs isn't simple!
+        // Will come back to this after learning more Java
+
     }
 
     @Test
     void bankInterfaceTest_whenLastNameHarkonnen() {
+
     }
 
     @Test
@@ -53,8 +72,14 @@ class BankingProgramTest {
     }
 
     @Test
-    void showAccountsTest_whenHouseholdNameAtreides() {
-
+    public void showAccountsTest_whenHouseholdNameAtreides() {
+        // Lol this is ALSO more complicated than expected!
+        // Return to this when working on capturing system print lines in tests
+        newTransaction.showAccounts(atreides);
+        String checkingAccountMessage;
+        String savingsAccountMessage;
+        String totalMessage;
+        // Assertions.equals();
     }
 
     @Test
@@ -74,7 +99,9 @@ class BankingProgramTest {
 
     @Test
     void depositToAccountTest_whenHouseholdNameAtreides() {
-
+        long actual = newTransaction.depositToAccount(atreides, deposit);
+        long expected = 3600989;
+        Assertions.assertEquals(expected, actual, "The expected amount was 3,600,989, instead returned " + actual);
     }
 
     @Test
@@ -118,7 +145,6 @@ class BankingProgramTest {
     void withdrawFromAccountTest_whenNewTotalIsNegative() {
 
     }
-
 
     @Test
     void withdrawFromAccountTest_whenNewTotalIsTooLow() {

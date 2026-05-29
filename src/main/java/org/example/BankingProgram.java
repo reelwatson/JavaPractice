@@ -1,3 +1,8 @@
+// NOTE: will likely turn this class into its own project
+// Fake ATM interface with handler and helper methods
+// Plus database integration
+// API calls?
+
 package org.example;
 
 import java.util.Scanner;
@@ -13,6 +18,8 @@ public class BankingProgram {
         String lastName;
         System.out.println("Welcome to the Spacing Guild Interplanetary Bank!\nInput your last name: ");
         lastName = scanner.nextLine();
+        // Should also ask for a specific PIN to authenticate
+        // Stretch goal - multifactor authentication
 
         // Do-while loop when the response is not a valid name
         do {
@@ -90,7 +97,7 @@ public class BankingProgram {
     }
 
     // Should these methods live in separate classes? Ehhhh but I'm in too deep now
-    private void showAccounts(String householdName) {
+    void showAccounts(String householdName) {
         allAccounts showAccount = new allAccounts();
         switch (householdName) {
             // Does not really follow DRY - easy to refactor if running a search to a database
@@ -116,7 +123,7 @@ public class BankingProgram {
         }
     }
 
-    private long depositToAccount(String householdName, long deposit) {
+    long depositToAccount(String householdName, long deposit) {
         allAccounts depositAccount = new allAccounts();
         long newTotal = 0;
 
@@ -139,7 +146,7 @@ public class BankingProgram {
         return newTotal;
     }
 
-    private long withdrawFromAccount(String householdName, long withdrawal) {
+    long withdrawFromAccount(String householdName, long withdrawal) {
         allAccounts withdrawAccount = new allAccounts();
         long newTotal = 0;
 
@@ -164,7 +171,8 @@ public class BankingProgram {
     // Private class to contain info on each particular house - static or non-static?
     // In real life would reach back into a database through a query, then make database updates as needed
     // TO DO: Implement the above line with a database (SQLite)
-    private class allAccounts {
+    // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
+    class allAccounts {
         long atreidesChecking = 3600200;
         long atreidesSavings = 456898444;
         long harkonnenChecking = 13254689;
