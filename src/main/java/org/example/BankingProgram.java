@@ -90,7 +90,7 @@ public class BankingProgram {
     }
 
     // Should these methods live in separate classes? Ehhhh but I'm in too deep now
-    private void showAccounts(String householdName) {
+    void showAccounts(String householdName) {
         allAccounts showAccount = new allAccounts();
         switch (householdName) {
             // Does not really follow DRY - easy to refactor if running a search to a database
@@ -116,7 +116,7 @@ public class BankingProgram {
         }
     }
 
-    private long depositToAccount(String householdName, long deposit) {
+    long depositToAccount(String householdName, long deposit) {
         allAccounts depositAccount = new allAccounts();
         long newTotal = 0;
 
@@ -139,7 +139,7 @@ public class BankingProgram {
         return newTotal;
     }
 
-    private long withdrawFromAccount(String householdName, long withdrawal) {
+    long withdrawFromAccount(String householdName, long withdrawal) {
         allAccounts withdrawAccount = new allAccounts();
         long newTotal = 0;
 
@@ -165,7 +165,7 @@ public class BankingProgram {
     // In real life would reach back into a database through a query, then make database updates as needed
     // TO DO: Implement the above line with a database (SQLite)
     // Short-term idea for refactoring - keep all of these in a single class rather than multiple separate classes
-    private class allAccounts {
+    class allAccounts {
         long atreidesChecking = 3600200;
         long atreidesSavings = 456898444;
         long harkonnenChecking = 13254689;
