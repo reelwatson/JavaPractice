@@ -21,11 +21,12 @@ public class LearningByteArrayInputStream {
         try {
             String stringInput = "Muad'dib";
             byte[] byteArray = stringInput.getBytes();
-            System.out.println(Arrays.toString(byteArray));
+            System.out.println("The byteArray for this word is " + Arrays.toString(byteArray));
 
             ByteArrayInputStream muaddibByteArrayInputStream = new ByteArrayInputStream(byteArray);
             int ch;
 
+            System.out.print("The actual word is ");
             while ((ch = muaddibByteArrayInputStream.read()) != -1) {
                 System.out.print((char) ch);
             }
