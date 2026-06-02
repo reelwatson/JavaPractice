@@ -18,10 +18,20 @@ public class LearningByteArrayInputStream {
     }
 
     public void myByteArrayInputStream() {
-        String stringInput = "Muad'dib";
-        byte[] byteArray = stringInput.getBytes();
-        System.out.println(Arrays.toString(byteArray));
+        try {
+            String stringInput = "Muad'dib";
+            byte[] byteArray = stringInput.getBytes();
+            System.out.println(Arrays.toString(byteArray));
 
-        ByteArrayInputStream muaddibByteArrayInputStream = new ByteArrayInputStream(byteArray);
+            ByteArrayInputStream muaddibByteArrayInputStream = new ByteArrayInputStream(byteArray);
+            int ch;
+
+            while ((ch = muaddibByteArrayInputStream.read()) != -1) {
+                System.out.print((char) ch);
+            }
+            muaddibByteArrayInputStream.close();
+        } catch (Exception e) {
+            System.out.print(Arrays.toString(e.getStackTrace()));
+        }
     }
 }
