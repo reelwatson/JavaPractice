@@ -9,6 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankingProgramTest {
 
+    // Note to self: if I do ever get a database set up
+    // then will need to create a mock/stub/fake numbers for diff accounts
+    // Meaning I will need to refactor a bunch of tests
+
     BankingProgram newTransaction = new BankingProgram();
     String atreides = "Atreides";
     String harkonnen = "Harkonnen";
@@ -116,14 +120,11 @@ class BankingProgramTest {
 
     @Test
     void depositToAccountTest_whenDepositNegative() {
-        // TO DO: Refactor code so a negative number is not allowed
     }
 
     @Test
     void depositToAccountTest_whenTotalExceedsLongMax() {
-        // TO DO: Refactor code to avoid overflow issues
-        // Show message to user when total would be greater than max long
-        // Restart transaction
+
     }
 
     @Test
@@ -148,8 +149,6 @@ class BankingProgramTest {
 
     @Test
     void withdrawFromAccountTest_whenNewTotalIsTooLow() {
-        // TO DO: Refactor code to avoid going below MIN long value
-        // Show message to user telling them to pick a smaller withdrawal
-        // Restart the loop
+
     }
 }
